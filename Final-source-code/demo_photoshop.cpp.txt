@@ -1,0 +1,254 @@
+#include <QFileDialog>
+#include <QPixmap>
+#include <QImage>
+#include <QMessageBox>
+#include <QStatusBar>
+#include <QColor>
+#include <QFile>
+#include <QTextStream>
+#include <QString>
+#include <QQueue>
+#include "demo_photoshop.h"
+#include "ui_demo_photoshop.h"
+#include "Image_Class.h"
+
+demo_photoshop::demo_photoshop(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::demo_photoshop)
+{
+    ui->setupUi(this);
+    // Initialize the status bar for displaying messages
+    statusBar()->showMessage("Ready");
+}
+
+demo_photoshop::~demo_photoshop()
+{
+    delete ui;
+}
+
+void demo_photoshop::on_horizontalSlider_rangeChanged(int min, int max)
+{
+    // Calculate the midpoint values based on the slider range
+    int fat = (max - min) / 2;
+    int hat = (max + min) / 2;
+    qDebug() << "fat: " << fat << ", hat: " << hat;
+}
+
+void invert_image(Image& primary, QString &name) {
+    // Invert the colors of the image
+    for (int i = 0; i < primary.width; i++) {
+        for (int j = 0; j < primary.height; j++) {
+            for (int k = 0; k < primary.channels; k++) {
+                primary(i, j, k) = 255 - primary(i, j, k);
+            }
+        }
+    }
+}
+
+void demo_photoshop::on_pushButton_2_clicked()
+{
+    // Open a file dialog to select an image file
+    QString file_name = QFileDialog::getOpenFileName(this, "Open Image File", "", "Images (*.png *.xpm *.jpg);;All Files (*)");
+
+    if (!file_name.isEmpty()) {
+        // Load the selected image file
+        QImage img(file_name);
+
+        // Check if the image is successfully loaded
+        if (img.isNull()) {
+            QMessageBox::warning(this, "Error", "Failed to load image.");
+            return;
+        }
+
+        // Convert QImage to QPixmap
+        QPixmap pix = QPixmap::fromImage(img);
+
+        // Get the dimensions of the UI image display area
+        int w = ui->Image->width();
+        int h = ui->Image->height();
+
+        // Set the pixmap to the label, scaled with SmoothTransformation for better quality
+        ui->Image->setPixmap(pix.scaled(w, h, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+
+        // Get image height and width, create empty binary matrix
+        unsigned int cols = img.width();
+        unsigned int rows = img.height();
+        unsigned int numBlackPixels = 0;
+        QVector<QVector<int>> imgArray(rows, QVector<int>(cols, 0));
+
+        for (unsigned int i = 0; i < rows; i++) {
+            for (unsigned int j = 0; j < cols; j++) {
+                QColor clrCurrent(img.pixel(j, i));
+                int r = clrCurrent.red();
+                int g = clrCurrent.green();
+                int b = clrCurrent.blue();
+                int a = clrCurrent.alpha();
+                // if black, assign 1 to the array
+                if ((r + g + b) < 20 && a > 240) {
+                    imgArray[i][j] = 1;
+                    numBlackPixels += 1;
+                }
+            }
+        }
+
+        // Store image array to a temp file
+        QString tempFileName = "D:/temp.txt";
+        QFile fileout(tempFileName);
+        if (fileout.open(QFile::WriteOnly | QFile::Text)) {
+            QTextStream out(&fileout);
+            // Loop through 2D array and add elements to the file
+            for (unsigned int i = 0; i < rows; i++) {
+                for (unsigned int j = 0; j < cols; j++) {
+                    out << imgArray[i][j] << " ";
+                }
+                out << Qt::endl;
+            }
+            fileout.close();
+        }
+
+        // Update UI with information (must be a QString)
+        ui->dims->setText(QString("W: %1 H: %2").arg(cols).arg(rows));
+        float pD = (((float)numBlackPixels) / ((float)(cols * rows))) * 100;
+        ui->PerecentDark->setText(QString::number(pD, 'f', 2) + "%");
+
+        // Find number of blobs
+        QVector<int> results = this->findProperties(imgArray, rows, cols);
+        // Update UI with results
+        ui->Nblobs->setText(QString::number(results[0]));
+        ui->MaxBlodArea->setText(QString::number(results[1]));
+
+        // Update the status bar with the file name of the loaded image
+        statusBar()->showMessage("Loaded image: " + file_name);
+    } else {
+        // Inform the user if no file was selected
+        QMessageBox::information(this, "Info", "No file selected.");
+    }
+}
+
+QVector<int> demo_photoshop::findProperties(QVector<QVector<int>> &imgArray, unsigned int &rows, unsigned int &cols)
+{
+    int numIslands = 0;
+    int maxArea = 0;
+    int area = 0;
+    // Create a 2D array to keep track of explored positions
+    QVector<QVector<int>> explored(rows, QVector<int>(cols, 0));
+
+    // Loop through each position in the image
+    for (unsigned int i = 0; i < rows; i++) {
+        for (unsigned int j = 0; j < cols; j++) {
+            if (imgArray[i][j] == 1 && explored[i][j] == 0) {
+                QVector<int> posn{static_cast<int>(i), static_cast<int>(j)};
+                area = this->bfSearch(posn, explored, rows, cols, imgArray);
+
+                // Update max area if the current blob's area is larger
+                if (area > maxArea) {
+                    maxArea = area;
+                }
+                numIslands += 1;
+            }
+        }
+    }
+
+    QVector<int> results{numIslands, maxArea};
+    return results;
+}
+
+int demo_photoshop::bfSearch(QVector<int> &posn, QVector<QVector<int>> &explored, unsigned int &rows, unsigned int &cols, QVector<QVector<int>> &imgArray)
+{
+    // Potential moves: up/down/left/right
+    QVector<QVector<int>> directions{{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+
+    int islandArea = 0;
+    QQueue<QVector<int>> not_explored;
+    not_explored.enqueue(posn); // Add the starting position to the queue
+    explored[posn[0]][posn[1]] = 1; // Mark the starting position as explored
+
+    while (!not_explored.isEmpty()) {
+        QVector<int> current = not_explored.dequeue();
+        int x = current[0];
+        int y = current[1];
+        islandArea++;
+
+        for (const QVector<int> &direction : directions) {
+            int nx = x + direction[0];
+            int ny = y + direction[1];
+
+            if (nx >= 0 && nx < int(rows) && ny >= 0 && ny < int(cols) && imgArray[nx][ny] == 1 && explored[nx][ny] == 0) {
+                not_explored.enqueue(QVector<int>{nx, ny});
+                explored[nx][ny] = 1; // Mark this position as explored
+            }
+        }
+    }
+
+    return islandArea;
+}
+
+void demo_photoshop::on_save_btn_clicked()
+{
+    // Open a file dialog to select an image file
+    QString file_name = QFileDialog::getOpenFileName(this, "Open Image File", "", "Images (*.png *.xpm *.jpg);;All Files (*)");
+
+    if (!file_name.isEmpty()) {
+        // Load the selected image file
+        QImage img(file_name);
+
+        // Check if the image is successfully loaded
+        if (img.isNull()) {
+            QMessageBox::warning(this, "Error", "Failed to load image.");
+            return;
+        }
+
+        // Convert QImage to QPixmap
+        QPixmap pix = QPixmap::fromImage(img);
+
+        // Get the dimensions of the UI image display area
+        int w = ui->Image->width();
+        int h = ui->Image->height();
+
+        // Set the pixmap to the label, scaled with SmoothTransformation for better quality
+        ui->Image->setPixmap(pix.scaled(w, h, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+
+        // Update the status bar with the file name of the loaded image
+        statusBar()->showMessage("Loaded image: " + file_name);
+    } else {
+        // Inform the user if no file was selected
+        QMessageBox::information(this, "Info", "No file selected.");
+    }
+}
+
+void demo_photoshop::on_del_btn_clicked()
+{
+    // Confirm if the user wants to delete the image
+    int result = QMessageBox::question(this, "Delete Image", "Are you sure you want to delete the image?", QMessageBox::Yes | QMessageBox::No);
+
+    if (result == QMessageBox::Yes) {
+        // Clear the QLabel by setting an empty QPixmap
+        ui->Image->clear();
+        // Inform the user that the image was deleted
+        QMessageBox::information(this, "Success", "Image deleted.");
+        // Update the status bar message
+        statusBar()->showMessage("Image deleted");
+    }
+}
+
+// Initialize zoom factors
+const double ZOOM_FACTOR = 1.2;
+
+void demo_photoshop::zoomIn() {
+    QPixmap pixmap = ui->Image->pixmap(); // Get the QPixmap object from QLabel
+    if (!pixmap.isNull()) {
+        QPixmap scaledPix = pixmap.scaled(pixmap.size() * ZOOM_FACTOR, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+        ui->Image->setPixmap(scaledPix);
+    }
+}
+
+void demo_photoshop::zoomOut() {
+    QPixmap pixmap = ui->Image->pixmap(); // Get the QPixmap object from QLabel
+    if (!pixmap.isNull()) {
+        QPixmap scaledPix = pixmap.scaled(pixmap.size() / ZOOM_FACTOR, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+        ui->Image->setPixmap(scaledPix);
+    }
+}
+
+
+

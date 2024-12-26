@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Photo Editor</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <item>
+     <layout class="QHBoxLayout" name="headerLayout">
+      <item>
+       <widget class="QPushButton" name="newPhotoButton">
+        <property name="text">
+         <string>Add New Photo</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="contentLayout">
+      <item>
+       <widget class="QTreeWidget" name="treeWidget">
+        <property name="minimumSize">
+         <size>
+          <width>250</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="tabKeyNavigation">
+         <bool>true</bool>
+        </property>
+        <property name="dragEnabled">
+         <bool>true</bool>
+        </property>
+        <property name="dragDropOverwriteMode">
+         <bool>true</bool>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <property name="uniformRowHeights">
+         <bool>true</bool>
+        </property>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
+        <property name="animated">
+         <bool>true</bool>
+        </property>
+        <property name="allColumnsShowFocus">
+         <bool>true</bool>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+        <property name="headerHidden">
+         <bool>true</bool>
+        </property>
+        <property name="headerLabel" stdset="0">
+         <string>Filters</string>
+        </property>
+        <attribute name="headerVisible">
+         <bool>false</bool>
+        </attribute>
+        <column>
+         <property name="text">
+          <string notr="true">1</string>
+         </property>
+         <property name="foreground">
+          <brush brushstyle="HorPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </property>
+        </column>
+        <item>
+         <property name="text">
+          <string>Basic Filters</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>Rotate</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Reverse</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Merge</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Grayscale</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Flip</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Black and White</string>
+          </property>
+         </item>
+        </item>
+        <item>
+         <property name="text">
+          <string>Advanced Filters</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>Resize</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Lighten</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Frame</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Edge Detection</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Darken</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Crop</string>
+          </property>
+         </item>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="tabPosition">
+         <enum>QTabWidget::TabPosition::North</enum>
+        </property>
+        <widget class="QWidget" name="tab_1">
+         <attribute name="title">
+          <string>Photo 1</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="photoLayout_1">
+          <item>
+           <widget class="QLabel" name="photoLabel_1">
+            <property name="autoFillBackground">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>Upload photo</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuGG_progammers">
+    <property name="title">
+     <string>GG-progammers</string>
+    </property>
+    <addaction name="separator"/>
+   </widget>
+   <addaction name="menuGG_progammers"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

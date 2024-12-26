@@ -1,0 +1,1599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>demo_photoshop</class>
+ <widget class="QMainWindow" name="demo_photoshop">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1215</width>
+    <height>931</height>
+   </rect>
+  </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
+  </property>
+  <property name="windowTitle">
+   <string>demo_photoshop</string>
+  </property>
+  <property name="toolTip">
+   <string/>
+  </property>
+  <property name="statusTip">
+   <string/>
+  </property>
+  <property name="whatsThis">
+   <string/>
+  </property>
+  <property name="accessibleName">
+   <string/>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LayoutDirection::LeftToRight</enum>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonStyle::ToolButtonFollowStyle</enum>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::TabShape::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QFrame" name="frame_3">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="sizeIncrement">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="2" rowspan="3">
+        <widget class="QFrame" name="frame_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>700</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="sizeIncrement">
+          <size>
+           <width>6987</width>
+           <height>6987</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Sunken</enum>
+         </property>
+         <widget class="QWidget" name="horizontalLayoutWidget">
+          <property name="geometry">
+           <rect>
+            <x>190</x>
+            <y>510</y>
+            <width>221</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="Undo_Redo">
+           <property name="sizeConstraint">
+            <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+           </property>
+           <item>
+            <widget class="QPushButton" name="undo">
+             <property name="toolTip">
+              <string>Undo</string>
+             </property>
+             <property name="statusTip">
+              <string>Undo</string>
+             </property>
+             <property name="text">
+              <string>Undo</string>
+             </property>
+             <property name="icon">
+              <iconset theme="QIcon::ThemeIcon::EditUndo"/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="redo">
+             <property name="toolTip">
+              <string>Redo</string>
+             </property>
+             <property name="statusTip">
+              <string>Redo</string>
+             </property>
+             <property name="text">
+              <string>Redo</string>
+             </property>
+             <property name="icon">
+              <iconset theme="QIcon::ThemeIcon::EditRedo"/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QTabWidget" name="tabs_menu">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>30</y>
+            <width>581</width>
+            <height>461</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="acceptDrops">
+           <bool>false</bool>
+          </property>
+          <property name="autoFillBackground">
+           <bool>true</bool>
+          </property>
+          <property name="tabPosition">
+           <enum>QTabWidget::TabPosition::North</enum>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <property name="usesScrollButtons">
+           <bool>true</bool>
+          </property>
+          <property name="documentMode">
+           <bool>true</bool>
+          </property>
+          <property name="tabsClosable">
+           <bool>true</bool>
+          </property>
+          <property name="movable">
+           <bool>true</bool>
+          </property>
+          <property name="tabBarAutoHide">
+           <bool>false</bool>
+          </property>
+          <widget class="QWidget" name="tab_3">
+           <attribute name="title">
+            <string>Home</string>
+           </attribute>
+           <widget class="QScrollArea" name="scrollAreaImage">
+            <property name="geometry">
+             <rect>
+              <x>-10</x>
+              <y>-10</y>
+              <width>1000</width>
+              <height>441</height>
+             </rect>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="cursor" stdset="0">
+             <cursorShape>ArrowCursor</cursorShape>
+            </property>
+            <property name="contextMenuPolicy">
+             <enum>Qt::ContextMenuPolicy::PreventContextMenu</enum>
+            </property>
+            <property name="acceptDrops">
+             <bool>false</bool>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="inputMethodHints">
+             <set>Qt::InputMethodHint::ImhNone</set>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Shape::Box</enum>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
+            </property>
+            <property name="sizeAdjustPolicy">
+             <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContentsOnFirstShow</enum>
+            </property>
+            <property name="widgetResizable">
+             <bool>true</bool>
+            </property>
+            <widget class="QWidget" name="scrollAreaWidgetContents">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>996</width>
+               <height>437</height>
+              </rect>
+             </property>
+             <widget class="QLabel" name="Image">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="geometry">
+               <rect>
+                <x>170</x>
+                <y>190</y>
+                <width>241</width>
+                <height>200</height>
+               </rect>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="toolTip">
+               <string/>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Photo will be here!&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="textFormat">
+               <enum>Qt::TextFormat::MarkdownText</enum>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </widget>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="tab_4">
+           <attribute name="title">
+            <string>Tab 2</string>
+           </attribute>
+          </widget>
+         </widget>
+         <widget class="QGroupBox" name="SliderBox">
+          <property name="geometry">
+           <rect>
+            <x>200</x>
+            <y>600</y>
+            <width>221</width>
+            <height>151</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string/>
+          </property>
+          <widget class="QSlider" name="horizontalSlider">
+           <property name="geometry">
+            <rect>
+             <x>9</x>
+             <y>70</y>
+             <width>201</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="cancelButton">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>110</y>
+             <width>65</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Cancel</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../../../Youssef Elkhatib/Desktop/cancel.png</normaloff>../../../Youssef Elkhatib/Desktop/cancel.png</iconset>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="applyButton">
+           <property name="geometry">
+            <rect>
+             <x>130</x>
+             <y>110</y>
+             <width>65</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Apply</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../../../Youssef Elkhatib/Desktop/emblemdefault_93502.png</normaloff>../../../Youssef Elkhatib/Desktop/emblemdefault_93502.png</iconset>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="horizontalLayoutWidget_2">
+          <property name="geometry">
+           <rect>
+            <x>220</x>
+            <y>550</y>
+            <width>161</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QPushButton" name="rotateRightButton">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/icon-rotate-left-90-512.png</normaloff>../../../Youssef Elkhatib/Desktop/icon-rotate-left-90-512.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="rotateLeftButton">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/icon-rotate-right-90-512.png</normaloff>../../../Youssef Elkhatib/Desktop/icon-rotate-right-90-512.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="layoutWidget">
+          <property name="geometry">
+           <rect>
+            <x>420</x>
+            <y>520</y>
+            <width>179</width>
+            <height>141</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <widget class="QLabel" name="cropped_dims">
+             <property name="text">
+              <string>Enter the Dimension</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_6">
+             <item>
+              <widget class="QLabel" name="Hight_crop">
+               <property name="text">
+                <string>Height Crop</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="heightInput">
+               <property name="maximum">
+                <number>500</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <item>
+              <widget class="QLabel" name="Width_crop">
+               <property name="text">
+                <string>Width Crop</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="widthInput">
+               <property name="maximum">
+                <number>500</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="layoutWidget">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>517</y>
+            <width>179</width>
+            <height>141</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QPushButton" name="Crop">
+             <property name="toolTip">
+              <string>Crop_image</string>
+             </property>
+             <property name="statusTip">
+              <string>Crop_image</string>
+             </property>
+             <property name="text">
+              <string>Crop</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/images.png</normaloff>../../../Youssef Elkhatib/Desktop/images.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="starting_points">
+             <property name="text">
+              <string>Enter Starting Points</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <widget class="QLabel" name="Y_cord">
+               <property name="text">
+                <string>Y</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="startYInput">
+               <property name="maximum">
+                <number>500</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QLabel" name="X_cord">
+               <property name="text">
+                <string>X</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="startXInput">
+               <property name="maximum">
+                <number>500</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <zorder>tabs_menu</zorder>
+         <zorder>horizontalLayoutWidget</zorder>
+         <zorder>SliderBox</zorder>
+         <zorder>horizontalLayoutWidget_2</zorder>
+         <zorder>layoutWidget</zorder>
+         <zorder>layoutWidget</zorder>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <layout class="QVBoxLayout" name="H_SOI">
+         <item>
+          <widget class="QRadioButton" name="Modes">
+           <property name="text">
+            <string>Switch Mode</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="Hide">
+           <property name="mouseTracking">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Hide </string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../../../Youssef Elkhatib/Desktop/hide.png</normaloff>../../../Youssef Elkhatib/Desktop/hide.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="Show_original_image">
+           <property name="toolTip">
+            <string>Show Original Photo</string>
+           </property>
+           <property name="statusTip">
+            <string>Show Original Image</string>
+           </property>
+           <property name="text">
+            <string>Show Original Image</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../../../Youssef Elkhatib/Desktop/original.png</normaloff>../../../Youssef Elkhatib/Desktop/original.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="1" rowspan="3">
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QSpinBox" name="frameSizeSpinBox">
+           <property name="minimum">
+            <number>0</number>
+           </property>
+           <property name="maximum">
+            <number>150</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="selectColor">
+           <property name="text">
+            <string>Enter Width - Select Color</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../../../Youssef Elkhatib/Desktop/retro-vintage-photo-camera-icon-illustration-vector.jpg</normaloff>../../../Youssef Elkhatib/Desktop/retro-vintage-photo-camera-icon-illustration-vector.jpg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Simple">
+           <property name="text">
+            <string>Simple Frame</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Arboretum">
+           <property name="text">
+            <string>Arboretum Frame</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Fancy">
+           <property name="text">
+            <string>Fancy Frame</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Circle_Frame">
+           <property name="text">
+            <string>Semi-Circle Frame</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Vintage">
+           <property name="text">
+            <string>Vintage</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../../../Youssef Elkhatib/Desktop/retro-vintage-photo-camera-icon-illustration-vector.jpg</normaloff>../../../Youssef Elkhatib/Desktop/retro-vintage-photo-camera-icon-illustration-vector.jpg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Lost_Signal">
+           <property name="text">
+            <string>Lost Signal</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../../../Youssef Elkhatib/Desktop/9710797.png</normaloff>../../../Youssef Elkhatib/Desktop/9710797.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="vertical_flip">
+           <property name="text">
+            <string>Vertical</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../../../Youssef Elkhatib/Desktop/retro-vintage-photo-camera-icon-illustration-vector.jpg</normaloff>../../../Youssef Elkhatib/Desktop/retro-vintage-photo-camera-icon-illustration-vector.jpg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="horiozontal_flip">
+           <property name="text">
+            <string>Horiozontal</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../../../Youssef Elkhatib/Desktop/9710797.png</normaloff>../../../Youssef Elkhatib/Desktop/9710797.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Wave_Horizontal">
+           <property name="text">
+            <string>Horizontal</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Wave_Vertical">
+           <property name="text">
+            <string>Vertical</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_8"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="Frequency_Label">
+           <property name="text">
+            <string>Frequency of Waves</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="Frequency"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="Height_Label">
+           <property name="text">
+            <string>Height of Waves</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="Height"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Upload_Second">
+           <property name="text">
+            <string>Upload Second Image</string>
+           </property>
+           <property name="icon">
+            <iconset theme="QIcon::ThemeIcon::DocumentSend"/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Merge_Primary">
+           <property name="text">
+            <string>Merge on Primary</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Merge_Secondary">
+           <property name="text">
+            <string>Merge on Secondary</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="Width_Label">
+           <property name="text">
+            <string>New Width</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="Width"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="Height_Label_2">
+           <property name="text">
+            <string>New Height</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="Height_2"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Apply_resize">
+           <property name="text">
+            <string>Apply</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Cancel_resize">
+           <property name="text">
+            <string>Cancel</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::FocusPolicy::NoFocus</enum>
+         </property>
+         <property name="text">
+          <string> Filters</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QToolBox" name="toolBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="mouseTracking">
+          <bool>false</bool>
+         </property>
+         <property name="toolTip">
+          <string>Filters</string>
+         </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
+         </property>
+         <property name="currentIndex">
+          <number>3</number>
+         </property>
+         <widget class="QWidget" name="Colors">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>170</width>
+            <height>537</height>
+           </rect>
+          </property>
+          <attribute name="icon">
+           <iconset>
+            <normaloff>../../../Youssef Elkhatib/Desktop/color-wheel.png</normaloff>../../../Youssef Elkhatib/Desktop/color-wheel.png</iconset>
+          </attribute>
+          <attribute name="label">
+           <string>Colors</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <widget class="QPushButton" name="Invert_image">
+             <property name="toolTip">
+              <string>Invert image</string>
+             </property>
+             <property name="text">
+              <string>Invert_Image</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/invert-colors.png</normaloff>../../../Youssef Elkhatib/Desktop/invert-colors.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="TV">
+             <property name="toolTip">
+              <string>TV</string>
+             </property>
+             <property name="statusTip">
+              <string>TV</string>
+             </property>
+             <property name="text">
+              <string>TV</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/tv.png</normaloff>../../../Youssef Elkhatib/Desktop/tv.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Black_White">
+             <property name="toolTip">
+              <string>Black and White</string>
+             </property>
+             <property name="text">
+              <string>Black_White</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/black-and-white.png</normaloff>../../../Youssef Elkhatib/Desktop/black-and-white.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Sunny">
+             <property name="toolTip">
+              <string>Sunny filter</string>
+             </property>
+             <property name="text">
+              <string>Sunny</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/sun_1400310.png</normaloff>../../../Youssef Elkhatib/Desktop/sun_1400310.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Oil_painting">
+             <property name="toolTip">
+              <string>Oil painting filter</string>
+             </property>
+             <property name="text">
+              <string>Oil_painting</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/oil.png</normaloff>../../../Youssef Elkhatib/Desktop/oil.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Infra_Red">
+             <property name="toolTip">
+              <string>Infra red filter</string>
+             </property>
+             <property name="text">
+              <string>Infra_Red</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/picture-512.png</normaloff>../../../Youssef Elkhatib/Desktop/picture-512.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Lighten_Darken">
+             <property name="toolTip">
+              <string>Lighten and Darken</string>
+             </property>
+             <property name="statusTip">
+              <string>Lighten and Darken</string>
+             </property>
+             <property name="text">
+              <string>Lighten_Darken</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/brightness_5465005.png</normaloff>../../../Youssef Elkhatib/Desktop/brightness_5465005.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Green">
+             <property name="toolTip">
+              <string>Purple Filter</string>
+             </property>
+             <property name="statusTip">
+              <string>Purple Filter</string>
+             </property>
+             <property name="text">
+              <string>Purple</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/icone-d-image-violet.png</normaloff>../../../Youssef Elkhatib/Desktop/icone-d-image-violet.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Grayscale">
+             <property name="toolTip">
+              <string>Grayscale Filter</string>
+             </property>
+             <property name="statusTip">
+              <string>Grayscale Filter</string>
+             </property>
+             <property name="text">
+              <string>Grayscale</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/image-512.png</normaloff>../../../Youssef Elkhatib/Desktop/image-512.png</iconset>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="Frames">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>170</width>
+            <height>537</height>
+           </rect>
+          </property>
+          <attribute name="icon">
+           <iconset>
+            <normaloff>../../../Youssef Elkhatib/Desktop/frame.png</normaloff>../../../Youssef Elkhatib/Desktop/frame.png</iconset>
+          </attribute>
+          <attribute name="label">
+           <string>Frames</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QPushButton" name="Rotate_Frame">
+             <property name="toolTip">
+              <string>Rotate Frame </string>
+             </property>
+             <property name="statusTip">
+              <string>Rotate Frame </string>
+             </property>
+             <property name="text">
+              <string>Rotate_Frame</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/565888.png</normaloff>../../../Youssef Elkhatib/Desktop/565888.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Rotate_Camera">
+             <property name="text">
+              <string>Rotate_Image</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Ball">
+             <property name="text">
+              <string>Ball</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/download (4).png</normaloff>../../../Youssef Elkhatib/Desktop/download (4).png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Egg">
+             <property name="text">
+              <string>Egg</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/images (2).png</normaloff>../../../Youssef Elkhatib/Desktop/images (2).png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Frames_2">
+             <property name="toolTip">
+              <string>Add Frame</string>
+             </property>
+             <property name="statusTip">
+              <string>Add Frame</string>
+             </property>
+             <property name="text">
+              <string>Frames</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/1438744.png</normaloff>../../../Youssef Elkhatib/Desktop/1438744.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Heart_frame">
+             <property name="toolTip">
+              <string>Heart Frame</string>
+             </property>
+             <property name="statusTip">
+              <string>Heart Frame</string>
+             </property>
+             <property name="text">
+              <string>Heart</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/heart.png</normaloff>../../../Youssef Elkhatib/Desktop/heart.png</iconset>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="Editing">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>170</width>
+            <height>537</height>
+           </rect>
+          </property>
+          <attribute name="icon">
+           <iconset>
+            <normaloff>../../../Youssef Elkhatib/Desktop/edit-image-icon.png</normaloff>../../../Youssef Elkhatib/Desktop/edit-image-icon.png</iconset>
+          </attribute>
+          <attribute name="label">
+           <string>Editing</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QPushButton" name="CropTools">
+             <property name="toolTip">
+              <string>Crop_image</string>
+             </property>
+             <property name="statusTip">
+              <string>Crop_image</string>
+             </property>
+             <property name="text">
+              <string>Crop Tools</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/images.png</normaloff>../../../Youssef Elkhatib/Desktop/images.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Detect_Edge">
+             <property name="toolTip">
+              <string>Detect_Edge</string>
+             </property>
+             <property name="statusTip">
+              <string>Detect_Edge</string>
+             </property>
+             <property name="text">
+              <string>Detect_Edge</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/images (1).png</normaloff>../../../Youssef Elkhatib/Desktop/images (1).png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Merge">
+             <property name="toolTip">
+              <string>Merge</string>
+             </property>
+             <property name="statusTip">
+              <string>Merge</string>
+             </property>
+             <property name="text">
+              <string>Merge</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/download (5).png</normaloff>../../../Youssef Elkhatib/Desktop/download (5).png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Blur">
+             <property name="toolTip">
+              <string>Blur</string>
+             </property>
+             <property name="statusTip">
+              <string>Blur</string>
+             </property>
+             <property name="text">
+              <string>Blur</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/1398140566_preview_3b2f.png</normaloff>../../../Youssef Elkhatib/Desktop/1398140566_preview_3b2f.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Resize">
+             <property name="toolTip">
+              <string>Resize</string>
+             </property>
+             <property name="text">
+              <string>Resize</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/1014901.png</normaloff>../../../Youssef Elkhatib/Desktop/1014901.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Flip">
+             <property name="toolTip">
+              <string>Flip</string>
+             </property>
+             <property name="statusTip">
+              <string>Flip</string>
+             </property>
+             <property name="text">
+              <string>Flip</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/Flip-2-icon-01.png</normaloff>../../../Youssef Elkhatib/Desktop/Flip-2-icon-01.png</iconset>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="Misc">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>170</width>
+            <height>537</height>
+           </rect>
+          </property>
+          <attribute name="icon">
+           <iconset>
+            <normaloff>../../../Youssef Elkhatib/Desktop/folder-misc.512x387.png</normaloff>../../../Youssef Elkhatib/Desktop/folder-misc.512x387.png</iconset>
+          </attribute>
+          <attribute name="label">
+           <string>Misc.</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QPushButton" name="Wave">
+             <property name="toolTip">
+              <string>Wave Image</string>
+             </property>
+             <property name="statusTip">
+              <string>Wave Image</string>
+             </property>
+             <property name="text">
+              <string>Wave</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/Iconarchive-Seaside-Water-Wave.512.png</normaloff>../../../Youssef Elkhatib/Desktop/Iconarchive-Seaside-Water-Wave.512.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Center_Light">
+             <property name="toolTip">
+              <string>Center_light</string>
+             </property>
+             <property name="statusTip">
+              <string>Center_light</string>
+             </property>
+             <property name="text">
+              <string>Center_Light</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/26603f5bbc37f5b46fa581d8df1be6d7.jpg</normaloff>../../../Youssef Elkhatib/Desktop/26603f5bbc37f5b46fa581d8df1be6d7.jpg</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Rain_Drop">
+             <property name="toolTip">
+              <string>Rain_Drop</string>
+             </property>
+             <property name="statusTip">
+              <string>Rain_Drop</string>
+             </property>
+             <property name="text">
+              <string>Rain_drop</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/download.png</normaloff>../../../Youssef Elkhatib/Desktop/download.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Skew">
+             <property name="toolTip">
+              <string>Skew</string>
+             </property>
+             <property name="statusTip">
+              <string>Skew</string>
+             </property>
+             <property name="text">
+              <string>Skew</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/download (2).png</normaloff>../../../Youssef Elkhatib/Desktop/download (2).png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Pixelate">
+             <property name="toolTip">
+              <string>Pixelate</string>
+             </property>
+             <property name="statusTip">
+              <string>Pixelate</string>
+             </property>
+             <property name="text">
+              <string>Pixelate</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../Youssef Elkhatib/Desktop/download (3).png</normaloff>../../../Youssef Elkhatib/Desktop/download (3).png</iconset>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="0">
+          <widget class="QPushButton" name="pushButton_2">
+           <property name="mouseTracking">
+            <bool>true</bool>
+           </property>
+           <property name="tabletTracking">
+            <bool>true</bool>
+           </property>
+           <property name="toolTip">
+            <string>Upload new image</string>
+           </property>
+           <property name="statusTip">
+            <string>Upload new image</string>
+           </property>
+           <property name="autoFillBackground">
+            <bool>true</bool>
+           </property>
+           <property name="text">
+            <string>Upload a New Image</string>
+           </property>
+           <property name="icon">
+            <iconset theme="QIcon::ThemeIcon::DocumentSend"/>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QPushButton" name="save_btn">
+           <property name="toolTip">
+            <string>Save this image</string>
+           </property>
+           <property name="statusTip">
+            <string>Save this image</string>
+           </property>
+           <property name="text">
+            <string>Save Image</string>
+           </property>
+           <property name="icon">
+            <iconset theme="QIcon::ThemeIcon::DocumentSave"/>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QPushButton" name="ChangeCurrentPhoto">
+           <property name="toolTip">
+            <string>Change current photo</string>
+           </property>
+           <property name="statusTip">
+            <string>Change current photo</string>
+           </property>
+           <property name="text">
+            <string>Change Current Image</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QPushButton" name="Clear">
+           <property name="text">
+            <string>Clear Filters</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../../../Youssef Elkhatib/Desktop/clear.png</normaloff>../../../Youssef Elkhatib/Desktop/clear.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="3" rowspan="2">
+        <widget class="QFrame" name="frame">
+         <property name="toolTip">
+          <string>Image_information</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Plain</enum>
+         </property>
+         <widget class="QLabel" name="DimLabel">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>30</y>
+            <width>91</width>
+            <height>61</height>
+           </rect>
+          </property>
+          <property name="sizeIncrement">
+           <size>
+            <width>175</width>
+            <height>80</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Dimensions: </string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="PercentDarkLabel">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>70</y>
+            <width>101</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="sizeIncrement">
+           <size>
+            <width>175</width>
+            <height>80</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Occupancy %:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="nBlobsLabel">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>100</y>
+            <width>91</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="sizeIncrement">
+           <size>
+            <width>175</width>
+            <height>80</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>No. of Blobs:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="MaxBlodAreaLabel">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>130</y>
+            <width>101</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="sizeIncrement">
+           <size>
+            <width>175</width>
+            <height>80</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Max Blob Area:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="dims">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>30</y>
+            <width>111</width>
+            <height>61</height>
+           </rect>
+          </property>
+          <property name="sizeIncrement">
+           <size>
+            <width>175</width>
+            <height>80</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Image_Info">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>-10</y>
+            <width>111</width>
+            <height>61</height>
+           </rect>
+          </property>
+          <property name="sizeIncrement">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>16</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Image Info</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="MaxBlodArea">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>130</y>
+            <width>101</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="sizeIncrement">
+           <size>
+            <width>175</width>
+            <height>80</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Nblobs">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>100</y>
+            <width>101</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="sizeIncrement">
+           <size>
+            <width>175</width>
+            <height>80</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QLabel" name="PerecentDark">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>70</y>
+            <width>111</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="sizeIncrement">
+           <size>
+            <width>175</width>
+            <height>80</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+      <zorder>toolBox</zorder>
+      <zorder>verticalLayoutWidget</zorder>
+      <zorder>label</zorder>
+      <zorder>frame</zorder>
+      <zorder>frame_2</zorder>
+      <zorder>verticalLayoutWidget_2</zorder>
+      <zorder>verticalLayoutWidget_3</zorder>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1215</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuGUI">
+    <property name="title">
+     <string>Bug Busters Team</string>
+    </property>
+   </widget>
+   <addaction name="menuGUI"/>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+ <slots>
+  <signal>signal1(int)</signal>
+ </slots>
+</ui>

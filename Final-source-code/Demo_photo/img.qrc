@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>D:/programming/GUI/demo_photoshop/img/caradoic.jpg</file>
+        <file>D:/programming/GUI/demo_photoshop/img/camera.png</file>
+        <file>D:/programming/GUI/demo_photoshop/img/icons8-camera.gif</file>
+        <file>D:/programming/GUI/demo_photoshop/img/egg.png</file>
+    </qresource>
+</RCC>
